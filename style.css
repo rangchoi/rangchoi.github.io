@@ -212,3 +212,4 @@ p { margin: 0 0 1.1em; }
 .logo-mouth { fill: currentColor; stroke: currentColor; stroke-width: 1; stroke-linejoin: round; }
 .logo-tooth { fill: var(--bg); stroke: var(--bg); stroke-width: .6; stroke-linejoin: round; }
 .site-name:hover .logo { transform: rotate(-8deg); transition: transform .2s; }
+.more { color: var(--muted); font-size: 15px; white-space: nowrap; }
