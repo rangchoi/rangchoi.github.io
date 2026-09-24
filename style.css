@@ -215,3 +215,4 @@ p { margin: 0 0 1.1em; }
 .more { color: var(--muted); font-size: 15px; white-space: nowrap; }
 .post-body strong { font-weight: 700; }
 .intro { font-size: 18px; color: var(--muted); }
+.empty { color: var(--faint); padding: 14px 0; border-bottom: 1px solid var(--line); margin: 0; }
