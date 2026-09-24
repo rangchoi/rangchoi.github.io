@@ -216,3 +216,14 @@ p { margin: 0 0 1.1em; }
 .post-body strong { font-weight: 700; }
 .intro { font-size: 18px; color: var(--muted); }
 .empty { color: var(--faint); padding: 14px 0; border-bottom: 1px solid var(--line); margin: 0; }
+h1 + .subtitle { margin: -12px 0 0; font-size: 19px; color: var(--muted); }
+.post-list li:last-child, .empty { border-bottom: 0; }
+
+/* 형광펜 */
+:root { --highlight: #ffe58a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --highlight: #6b5a1e; } }
+mark {
+  color: inherit;
+  background: linear-gradient(transparent 55%, var(--highlight) 55%);
+  padding: 0 2px;
+}
