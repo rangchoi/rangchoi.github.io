@@ -161,49 +161,6 @@ p { margin: 0 0 1.1em; }
 .now-box p:last-child { margin-bottom: 0; }
 .section-head .small { font-size: 14px; }
 
-/* 인생 그래프 */
-.life { margin-top: 20px; }
-.life-graph { width: 100%; }
-.life-graph svg { display: block; overflow: visible; }
-.lg-zero { stroke: var(--line); stroke-width: 1; stroke-dasharray: 4 4; }
-.lg-label { fill: var(--faint); font-size: 12px; }
-.lg-line { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; }
-.lg-point { cursor: pointer; outline: none; }
-.lg-hit { fill: transparent; }
-.lg-dot { fill: var(--bg); stroke: var(--accent); stroke-width: 2.5; transition: r .15s; }
-.lg-dot.low { stroke: var(--faint); }
-.lg-point:hover .lg-dot, .lg-point:focus-visible .lg-dot { r: 7; }
-.lg-point.is-selected .lg-dot { fill: var(--accent); stroke: var(--accent); }
-.lg-year { fill: var(--faint); font-size: 12px; font-variant-numeric: tabular-nums; }
-.lg-point.is-selected .lg-year { fill: var(--text); font-weight: 600; }
-
-.life-detail {
-  margin-top: 16px; padding: 18px 20px;
-  border: 1px solid var(--line); border-radius: 12px;
-}
-.life-detail .life-year { display: block; font-size: 13px; color: var(--accent); font-weight: 600; }
-.life-detail strong { font-size: 17px; }
-.life-detail p { margin: 4px 0 0; color: var(--muted); }
-.life-detail a { display: inline-block; margin-top: 8px; font-size: 14px; color: var(--accent); }
-
-.life-list { list-style: none; margin: 28px 0 0; padding: 0; border-left: 2px solid var(--line); }
-.life-list li { position: relative; padding: 0 0 18px 20px; }
-.life-list li::before {
-  content: ""; position: absolute; left: -6px; top: 10px;
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--bg); border: 2px solid var(--line);
-}
-.life-list li.is-selected::before { background: var(--accent); border-color: var(--accent); }
-.life-list button {
-  display: flex; gap: 14px; width: 100%; padding: 0; text-align: left;
-  font: inherit; color: inherit; background: none; border: 0; cursor: pointer;
-}
-.life-list .life-year { flex: none; width: 40px; color: var(--faint); font-size: 14px; padding-top: 2px; font-variant-numeric: tabular-nums; }
-.life-list .life-body { display: flex; flex-direction: column; }
-.life-list .life-body span { color: var(--muted); font-size: 15px; }
-.life-list li.is-selected strong { color: var(--accent); }
-.life-list .life-link { margin-left: 54px; font-size: 14px; color: var(--accent); }
-
 /* 로고 */
 .site-name { display: inline-flex; align-items: center; gap: 6px; }
 .logo { width: 30px; height: 30px; margin: -3px 0; flex: none; color: var(--accent); }
