@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>글 · 랑초이</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="site-name" href="/"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><circle class="logo-eye" cx="8" cy="8.5" r="1.9"/><path class="logo-wink" d="M17.16 7.34 L14.85 8.60 L17.16 9.86"/><path class="logo-mouth" d="M7 13 H17 A5 5 0 0 1 7 13 Z"/><path class="logo-tooth" d="M13.3 13.4 H15.5 L14.5 15.6 Z"/></svg>랑초이</a>
+      <nav class="site-nav">
+        <a href="/writing/" aria-current="page">글</a>
+        <a href="/about.html">소개</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>글</h1>
+      <p class="muted">일에 대한 생각과 삶에 대한 생각을 함께 적어요.</p>
+
+      <div class="filters" role="group" aria-label="글 분류">
+        <button type="button" data-filter="all" aria-pressed="true">전체</button>
+        <button type="button" data-filter="work" aria-pressed="false">일</button>
+        <button type="button" data-filter="life" aria-pressed="false">삶</button>
+      </div>
+
+      <h2 class="year">2026</h2>
+      <ul class="post-list">
+        <li data-cat="life"><span class="date">09.24</span><span class="tag life">삶</span><a class="title" href="/posts/2026-09-24-start.html">이 사이트를 시작하며</a></li>
+        <li data-cat="work"><span class="date">09.20</span><span class="tag work">일</span><a class="title" href="/posts/2026-09-20-work-example.html">(예시) 일을 잘한다는 것</a></li>
+        <li data-cat="life"><span class="date">09.14</span><span class="tag life">삶</span><a class="title" href="/posts/2026-09-14-life-example.html">(예시) 요즘 좋아하는 것들</a></li>
+      </ul>
+    </main>
+
+    <footer class="site-footer">© 2026 랑초이 · <a href="mailto:rangchoi337@naver.com">rangchoi337@naver.com</a></footer>
+  </div>
+  <script>
+    const buttons = document.querySelectorAll(".filters button");
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const f = btn.dataset.filter;
+        buttons.forEach((b) => b.setAttribute("aria-pressed", b === btn));
+        document.querySelectorAll(".post-list li").forEach((li) => {
+          li.hidden = f !== "all" && li.dataset.cat !== f;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
