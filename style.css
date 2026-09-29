@@ -171,7 +171,7 @@ p { margin: 0 0 1.1em; }
 .site-name:hover .logo { transform: rotate(-8deg); transition: transform .2s; }
 .more { color: var(--muted); font-size: 15px; white-space: nowrap; }
 .post-body strong { font-weight: 700; }
-.intro { font-size: 18px; color: var(--muted); }
+.intro { color: var(--text); }
 .empty { color: var(--faint); padding: 14px 0; border-bottom: 1px solid var(--line); margin: 0; }
 h1 + .subtitle { margin: -12px 0 0; font-size: 19px; color: var(--muted); }
 .post-list li:last-child, .empty { border-bottom: 0; }
@@ -184,3 +184,9 @@ mark {
   background: linear-gradient(transparent 55%, var(--highlight) 55%);
   padding: 0 2px;
 }
+
+/* 소개 페이지 본문은 제목 바로 아래에서 시작 */
+.post-body.page { margin-top: 0; }
+
+/* 화면에는 안 보이고 스크린 리더와 검색엔진만 읽는 제목 */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
