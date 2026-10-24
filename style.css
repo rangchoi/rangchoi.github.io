@@ -90,8 +90,8 @@ p { margin: 0 0 1.1em; }
 }
 .post-list li[hidden] { display: none; }
 .post-list .date { flex: none; width: 88px; font-size: 14px; color: var(--faint); font-variant-numeric: tabular-nums; }
-.post-list .title { flex: 1; min-width: 0; }
-.post-list .title .sub { display: block; margin-top: 2px; font-size: 14px; color: var(--muted); }
+.post-list .title { flex: 1; min-width: 0; font-weight: 600; }
+.post-list .title .sub { display: block; font-weight: 400; margin-top: 2px; font-size: 14px; color: var(--muted); }
 
 .tag {
   flex: none;
