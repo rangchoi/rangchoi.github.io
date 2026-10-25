@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>여러 일을 동시에 하려면, 설정부터 · 랑초이</title>
+  <meta name="description" content="동시에 하는 건 AI가 해주지만, 섞이지 않게 하는 건 내 몫이었다.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="랑초이">
+  <meta property="og:title" content="여러 일을 동시에 하려면, 설정부터">
+  <meta property="og:description" content="동시에 하는 건 AI가 해주지만, 섞이지 않게 하는 건 내 몫이었다.">
+  <meta property="og:url" content="https://rangchoi.github.io/posts/2026-10-25-setup-before-parallel.html">
+  <meta property="og:image" content="https://rangchoi.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css?v=5">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="site-name" href="/"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><circle class="logo-eye" cx="8" cy="8.5" r="1.9"/><path class="logo-wink" d="M17.16 7.34 L14.85 8.60 L17.16 9.86"/><path class="logo-mouth" d="M7 13 H17 A5 5 0 0 1 7 13 Z"/><path class="logo-tooth" d="M13.3 13.4 H15.5 L14.5 15.6 Z"/></svg>랑초이</a>
+      <nav class="site-nav">
+        <a href="/writing/">글</a>
+        <a href="/about.html">소개</a>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <div class="post-meta"><span class="tag work">일</span><time datetime="2026-10-25">2026년 10월 25일</time></div>
+        <h1>여러 일을 동시에 하려면, 설정부터</h1>
+        <p class="subtitle">AI와 일하면서 워크트리를 쓰게 된 이유</p>
+        <div class="post-body">
+          <h2>예전에는 브랜치 하나면 충분했다</h2>
+          <p>처음 회사에 들어왔을 때 git을 쓸 일은 지표를 만들거나 버전업할 때, 중간 테이블을 만들 때 정도였다. 브랜치 하나를 만들어 작업하고 합치면 끝이었다. 한 번에 한 가지 일만 했으니까.</p>
+
+          <h2>브랜치만 나눠서는 꼬였다</h2>
+          <p>예를 들어 홈피드 대시보드에 고칠 게 세 가지 있다고 해보자.</p>
+          <ul>
+            <li><strong>찾기:</strong> 보고 싶은 차트를 검색으로 바로 찾기</li>
+            <li><strong>탭 정리:</strong> 서비스별로 탭을 나누고 차트 다시 배치하기</li>
+            <li><strong>배포 연결:</strong> 차트마다 영향을 줬을 배포 이력 보여주기</li>
+          </ul>
+          <p>예전엔 하나씩 고쳤을 텐데, 이제는 클로드 세션 세 개에 하나씩 맡겨 동시에 한다. 브랜치도 셋으로 나눴다. 그런데 브랜치만 나누고 작업 폴더는 하나로 두니 문제가 생겼다.</p>
+          <ul>
+            <li><strong>일이 꼬였다.</strong> 탭 정리를 시켜놓은 클로드 세션에 “여기까지 커밋해줘” 했는데, 커밋이 찾기 브랜치에 들어가 있었다. 같은 파일을 서로 덮어쓰기도 했다.</li>
+            <li><strong>머리가 지쳤다.</strong> 세션을 오갈 때마다 ‘이 세션이 지금 어느 브랜치에 있지?’부터 확인해야 했다.</li>
+          </ul>
+          <p>빨리 하려고 나눴는데, 엉킨 걸 푸느라 오히려 더 느려졌다.</p>
+
+          <h2>작업 폴더도 나눠야 했다</h2>
+          <p>레포가 책장이라면, 브랜치는 거기 꽂힌 책이고 작업 폴더는 책을 펼쳐두는 책상이다. 나는 세 세션을 책상 하나에 앉혀둔 셈이었다. 한 세션이 다른 책을 펼치면, 나머지는 그것도 모르고 그 책에 쓰고 있었던 것이다.</p>
+          <p><mark>git의 워크트리가 바로 책상을 늘리는 기능이다.</mark> 책장은 같이 쓰면서 책상만 하나씩 더 놓는다. 세션마다 자기 책상이 생기니 커밋이 섞이거나 서로 덮어쓸 일이 없어졌다.</p>
+          <ul>
+            <li><strong>규칙:</strong> 파일을 고칠 땐 워크트리부터 만들도록 CLAUDE.md에 적었다.</li>
+            <li><strong>안전장치:</strong> 깜빡하고 원래 폴더에서 고치려 하면 훅이 막는다.</li>
+          </ul>
+
+          <h2>동시에 하려면, 설정부터</h2>
+          <p>AI 덕분에 동시에 할 수 있게 됐다. 그렇다고 저절로 빨라지지는 않았다. <mark>동시에 하는 건 AI가 해주지만, 섞이지 않게 하는 건 내 몫이었다.</mark></p>
+          <p>이제는 세션을 하나 더 띄우기 전에, 그 세션이 일할 자리부터 마련한다. 그게 오히려 빨랐다.</p>
+        </div>
+      </article>
+      <nav class="post-nav"><a href="/writing/">← 전체 글 보기</a></nav>
+    </main>
+
+    <footer class="site-footer">© 2026 랑초이 · <a href="mailto:rangchoi337@naver.com">rangchoi337@naver.com</a></footer>
+  </div>
+</body>
+</html>
