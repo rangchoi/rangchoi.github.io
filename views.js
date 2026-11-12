@@ -4,7 +4,8 @@
   if (!meta) return;
 
   var url = 'https://rangchoi.goatcounter.com/counter/' + encodeURIComponent(location.pathname) + '.json';
-  fetch(url)
+  // 응답에 몇 시간짜리 Expires가 붙어 와서, 브라우저 캐시는 쓰지 않는다
+  fetch(url, { cache: 'no-cache' })
     // 아직 집계된 방문이 없는 글은 404가 온다
     .then(function (r) { return r.ok ? r.json() : r.status === 404 ? { count: '0' } : null; })
     .then(function (d) {
